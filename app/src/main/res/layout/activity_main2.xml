@@ -5,13 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FEFEFE"
     tools:context=".MainActivity2">
 
     <Button
         android:id="@+id/button2"
         android:layout_width="124dp"
         android:layout_height="68dp"
-        android:layout_marginTop="560dp"
+        android:layout_marginTop="620dp"
         android:text="Sign up"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,12 +24,12 @@
         android:id="@+id/editTextTextPassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="504dp"
+        android:layout_marginTop="564dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +37,7 @@
         android:id="@+id/textView5"
         android:layout_width="131dp"
         android:layout_height="39dp"
-        android:layout_marginTop="464dp"
+        android:layout_marginTop="524dp"
         android:text="PASSWORD"
         android:textColor="@color/black"
         android:textSize="18dp"
@@ -50,7 +51,7 @@
         android:id="@+id/editTextTextEmailAddress2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="416dp"
+        android:layout_marginTop="476dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
@@ -63,7 +64,7 @@
         android:id="@+id/textView6"
         android:layout_width="131dp"
         android:layout_height="39dp"
-        android:layout_marginTop="376dp"
+        android:layout_marginTop="436dp"
         android:text="EMAIL"
         android:textColor="@color/black"
         android:textSize="18dp"
@@ -77,7 +78,7 @@
         android:id="@+id/editTextText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="328dp"
+        android:layout_marginTop="388dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="text"
@@ -90,7 +91,7 @@
         android:id="@+id/textView7"
         android:layout_width="131dp"
         android:layout_height="39dp"
-        android:layout_marginTop="289dp"
+        android:layout_marginTop="348dp"
         android:text="Name"
         android:textColor="@color/black"
         android:textSize="18dp"
@@ -99,5 +100,15 @@
         app:layout_constraintHorizontal_bias="0.385"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="245dp"
+        android:layout_height="211dp"
+        android:layout_marginTop="128dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/preview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
