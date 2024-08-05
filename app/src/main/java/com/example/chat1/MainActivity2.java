@@ -2,6 +2,7 @@ package com.example.chat1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -27,6 +28,15 @@ public class MainActivity2 extends AppCompatActivity {
         signup=(Button) findViewById(R.id.button2);
 
         i=new Intent(MainActivity2.this, MainActivity.class);
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String s1,s2,s3;
+                s1=email.getText().toString();
+                s2=pass.getText().toString();
+                s3=name.getText().toString();
+            }
+        });
 
     }
 }
