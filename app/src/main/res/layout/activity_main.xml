@@ -29,7 +29,7 @@
         android:text="PASSWORD"
         android:textColor="@color/black"
         android:textSize="18dp"
-        android:textStyle="bold"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.385"
         app:layout_constraintStart_toStartOf="parent"
