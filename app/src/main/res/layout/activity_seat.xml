@@ -25,9 +25,9 @@
         android:id="@+id/imageView3"
         android:layout_width="386dp"
         android:layout_height="85dp"
-        android:layout_marginTop="113dp"
+        android:layout_marginTop="96dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/image11" />
@@ -36,7 +36,7 @@
         android:id="@+id/textView3"
         android:layout_width="159dp"
         android:layout_height="29dp"
-        android:layout_marginTop="131dp"
+        android:layout_marginTop="116dp"
         android:text="Cinema Screen"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -159,5 +159,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
