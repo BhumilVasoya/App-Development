@@ -2,6 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="back1">#CBD8F0</color>
+    <color name="available">#F5F5F5</color>
+    <color name="blue">#006FFD</color>
     <color name="purple">#8692f7</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
@@ -11,13 +14,11 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#CCCCCC</color>
     <color name="_bg__login_screen_ek2_color">#FFFFFF</color>
     <color name="background_color">#ffffff</color>
     <color name="ellipse_1_color">#F7F9FF</color>
     <color name="login_here_color">#1F41BB</color>
-    <color name="welcome_back_you_ve_been_missed__color">#000000</color>
     <color name="placeholder_color">#616161</color>
     <color name="button_ek3_color">#494949</color>
 </resources>
