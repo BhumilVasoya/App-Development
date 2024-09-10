@@ -15,15 +15,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    Button loginButton;
+    Button signinButton;
 
     Intent i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        loginButton = findViewById(R.id.button);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        signinButton = findViewById(R.id.button);
+        signinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 i = new Intent(MainActivity.this,Seat.class);
