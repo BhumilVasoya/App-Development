@@ -1,12 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/frame_8"
-    android:layout_width="394dp"
-    android:layout_height="440dp"
-    android:layout_alignParentLeft="true"
-    android:layout_marginLeft="18dp"
-    android:layout_alignParentTop="true"
-    android:layout_marginTop="150dp"
-    />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_screen_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity2">
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="105dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/header_1" />
+
+    <EditText
+        android:id="@+id/Email"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="307dp"
+        android:ems="10"
+        android:hint="Email"
+        android:padding="10dp"
+        android:background="@drawable/login_e"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Password1"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="380dp"
+        android:ems="10"
+        android:hint="Password"
+        android:padding="10dp"
+        android:background="@drawable/login_e"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Password2"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="450dp"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:padding="10dp"
+        android:background="@drawable/login_e"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Signup"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="560dp"
+        android:text="Sign up"
+        android:textAllCaps="false"
+        android:background="@drawable/btn"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/but4"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="615dp"
+        android:text="Already have an account"
+        android:textAllCaps="false"
+        android:background="@drawable/l1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
