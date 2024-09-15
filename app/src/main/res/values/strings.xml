@@ -9,4 +9,6 @@
     <string name="button_ek1_string">Sign in</string>
     <string name="button_ek3_string">Create new account</string>
     <string name="or_continue_with_string">Or continue with</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

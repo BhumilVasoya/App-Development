@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString("email",e);
                     editor.putString("password",p);
                     editor.commit();*/
-                    i = new Intent(MainActivity.this, Seat.class);
+                    i = new Intent(MainActivity.this, Home.class);
                     startActivity(i);
                 } else if(e.isEmpty()){
                     email.setError("Email is compulsary");
