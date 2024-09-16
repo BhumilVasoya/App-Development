@@ -4,6 +4,7 @@ import static com.example.a1.R.color.*;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.ColorRes;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -27,9 +29,10 @@ public class Seat extends AppCompatActivity implements View.OnClickListener {
     Button a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,f1,f2,f3,f4,f5,f6,f7,f8,f9,f10;
     Button Confirm;
     ImageView back;
-    Intent i;
     TextView TC,seatid,PriceView;
     int seatCount=0;
+
+    SharedPreferences t;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -37,6 +40,7 @@ public class Seat extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_seat);
+
 
         TC=(TextView) findViewById(R.id.textView6);
         seatid=(TextView) findViewById(R.id.textView7);
@@ -187,9 +191,12 @@ public class Seat extends AppCompatActivity implements View.OnClickListener {
                 }
                 else
                 {
-                    i=new Intent(Seat.this, ticket.class);
-                    //i.putExtra("seats",seatid.getText().toString());
-                    startActivity(i);
+                    Intent T=new Intent(Seat.this, ticket.class);
+                    t = getSharedPreferences("movie_details", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = t.edit();
+                    editor.putString("seat",seatid.getText().toString() );
+                    editor.commit();
+                    startActivity(T);
                 }
 
             }
@@ -198,8 +205,8 @@ public class Seat extends AppCompatActivity implements View.OnClickListener {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                i=new Intent(Seat.this, Home.class);
-                startActivity(i);
+                Intent H=new Intent(Seat.this, Home.class);
+                startActivity(H);
             }
         });
     }

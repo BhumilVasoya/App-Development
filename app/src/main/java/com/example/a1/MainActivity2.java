@@ -2,7 +2,9 @@ package com.example.a1;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +17,7 @@ public class MainActivity2 extends AppCompatActivity {
     Button Signup,b2;
     EditText email,pwd1,pwd2;
     Intent i;
+    SharedPreferences s;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,7 @@ public class MainActivity2 extends AppCompatActivity {
         email=(EditText) findViewById(R.id.Email);
         pwd1=(EditText) findViewById(R.id.Password1);
         pwd2=(EditText) findViewById(R.id.Password2);
+        s = getSharedPreferences("user_details", MODE_PRIVATE);
 
         Signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,16 +42,33 @@ public class MainActivity2 extends AppCompatActivity {
 
                 if(e.isEmpty())
                 {
-                    email.setError("Email is compulsary");
+                    email.setError("Email is required");
+                    Toast.makeText(getApplicationContext(),"Please enter your email",Toast.LENGTH_LONG).show();
+                    email.requestFocus();
 
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(e).matches()) {
+                    email.setError("Valid Email is required");
+                    email.requestFocus();
+                    Toast.makeText(getApplicationContext(),"Please re-enter your email",Toast.LENGTH_LONG).show();
+                    
                 } else if (p1.isEmpty()) {
                     pwd1.setError("Password is must");
-                } else if (p2.isEmpty()||!(p1.equals(p2))) {
+                    pwd1.requestFocus();
+
+                } else if (p1.length()<6) {
+                    pwd1.setError("Password should be at least 6 digits");
+                    pwd1.requestFocus();
+
+                } else if (!(p1.equals(p2))) {
                     pwd2.setError("Passwords do not match.");
+                    pwd2.requestFocus();
+                } else if (s.getString("email",null)==e) {
+                    Toast.makeText(getApplicationContext(),"You already have an account",Toast.LENGTH_LONG).show();
+                    b2.requestFocus();
                 } else
                 {
                     Toast.makeText(getApplicationContext(),"Your Account has been created",Toast.LENGTH_SHORT).show();
-                    i=new Intent(MainActivity2.this, Seat.class);
+                    i=new Intent(MainActivity2.this, Home.class);
                     startActivity(i);                }
             }
         });
