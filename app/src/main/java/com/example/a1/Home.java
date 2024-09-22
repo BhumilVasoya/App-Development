@@ -27,7 +27,6 @@ import com.google.android.material.navigation.NavigationBarView;
 public class Home extends AppCompatActivity{
     ImageView m1,m2,m3,logout;
     SharedPreferences s,t;
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
