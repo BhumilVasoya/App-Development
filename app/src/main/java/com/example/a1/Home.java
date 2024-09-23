@@ -23,23 +23,35 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Home extends AppCompatActivity{
     ImageView m1,m2,m3,logout;
-    SharedPreferences s,t;
+    SharedPreferences t;
+
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home);
 
+        mAuth=FirebaseAuth.getInstance();
 
         m1=(ImageView) findViewById(R.id.movie1);
         m2=(ImageView) findViewById(R.id.movie2);
         m3=(ImageView) findViewById(R.id.movie3);
         logout=(ImageView) findViewById(R.id.logout);
-        s = getSharedPreferences("user_details",MODE_PRIVATE);
         t = getSharedPreferences("movie_details",MODE_PRIVATE);
+
+        FirebaseUser currentUser=mAuth.getCurrentUser();
+        if(currentUser==null)
+        {
+            Intent J = new Intent(Home.this, MainActivity2.class);
+            startActivity(J);
+            finish();
+        }
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,9 +100,7 @@ public class Home extends AppCompatActivity{
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                SharedPreferences.Editor editor = s.edit();
-                editor.clear();
-                editor.commit();
+                FirebaseAuth.getInstance().signOut();
                 Intent L=new Intent(Home.this,MainActivity.class);
                 startActivity(L);
             }

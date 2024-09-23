@@ -10,30 +10,41 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     Button signinButton, b2;
-    SharedPreferences s;
 
     EditText email, pwd;
     Intent i;
 
-    @SuppressLint("MissingInflatedId")
+    FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mAuth=FirebaseAuth.getInstance();
 
         email = (EditText) findViewById(R.id.editEmail);
         pwd = (EditText) findViewById(R.id.editPassword);
         b2 = (Button) findViewById(R.id.b3);
 
         signinButton = findViewById(R.id.button);
-        s = getSharedPreferences("user_details", MODE_PRIVATE);
         Intent J = new Intent(MainActivity.this, Home.class);
-        if (s.contains("email") && s.contains("password")) {
+        FirebaseUser currentUser=mAuth.getCurrentUser();
+        if(currentUser!=null)
+        {
             startActivity(J);
+            finish();
         }
 
         signinButton.setOnClickListener(new View.OnClickListener() {
@@ -42,15 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 String e = email.getText().toString();
                 String p = pwd.getText().toString();
 
-                if (e.equals("bhumilv23@gmail.com") && p.equals("bhumil23")) {
-                    SharedPreferences.Editor editor = s.edit();
-                       editor.putString("email", e);
-                       editor.putString("password", p);
-                        editor.commit();
-                    i = new Intent(MainActivity.this, Home.class);
-                    startActivity(i);
-                }
-                else if (e.isEmpty()) {
+                if (e.isEmpty()) {
                     email.setError("Email is compulsary");
                 }
                 else if (!Patterns.EMAIL_ADDRESS.matcher(e).matches()) {
@@ -65,9 +68,20 @@ public class MainActivity extends AppCompatActivity {
                     pwd.setError("Password should be at least 6 digits");
                     pwd.requestFocus();
                 }
-                else {
-                    Toast.makeText(getApplicationContext(), "Incorrect Email or Password", Toast.LENGTH_SHORT).show();
-                }
+                mAuth.signInWithEmailAndPassword(e, p)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    i = new Intent(MainActivity.this, Home.class);
+                                    startActivity(i);
+                                } else {
+                                    Toast.makeText(MainActivity.this, "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
+
+                                }
+                            }
+                        });
 
             }
         });
