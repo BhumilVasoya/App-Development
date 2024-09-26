@@ -31,6 +31,7 @@ public class Home extends AppCompatActivity{
     SharedPreferences t;
 
     FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,7 @@ public class Home extends AppCompatActivity{
         m2=(ImageView) findViewById(R.id.movie2);
         m3=(ImageView) findViewById(R.id.movie3);
         logout=(ImageView) findViewById(R.id.logout);
+
         t = getSharedPreferences("movie_details",MODE_PRIVATE);
 
         FirebaseUser currentUser=mAuth.getCurrentUser();
@@ -93,6 +95,7 @@ public class Home extends AppCompatActivity{
             }
         });
     }
+
     private void showLogoutDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Logout");

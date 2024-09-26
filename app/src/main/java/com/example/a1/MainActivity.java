@@ -56,18 +56,19 @@ public class MainActivity extends AppCompatActivity {
                 if (e.isEmpty()) {
                     email.setError("Email is compulsary");
                 }
-                else if (!Patterns.EMAIL_ADDRESS.matcher(e).matches()) {
+                if (!Patterns.EMAIL_ADDRESS.matcher(e).matches()) {
                     email.setError("Valid Email is required");
                     email.requestFocus();
                     Toast.makeText(getApplicationContext(), "Please re-enter your email", Toast.LENGTH_LONG).show();
                 }
-                else if (p.isEmpty()) {
+                if (p.isEmpty()) {
                     pwd.setError("Password is must");
                 }
-                else if (p.length() < 6) {
+                if (p.length() < 6) {
                     pwd.setError("Password should be at least 6 digits");
                     pwd.requestFocus();
                 }
+
                 mAuth.signInWithEmailAndPassword(e, p)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
