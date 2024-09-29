@@ -2,7 +2,6 @@ package com.example.a1;
 
 
 public class SeatModel {
-    private String seatId;
     private String seatNumber;
     private boolean isSelected;
     private boolean isUnavailable;

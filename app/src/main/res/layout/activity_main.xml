@@ -7,7 +7,7 @@
     android:background="@drawable/login_screen_bg"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Date_Time">
 
 
     <ImageView

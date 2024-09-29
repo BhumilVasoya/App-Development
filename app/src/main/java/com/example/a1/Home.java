@@ -1,28 +1,16 @@
 package com.example.a1;
 
-import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
-import com.example.a1.R;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -65,7 +53,7 @@ public class Home extends AppCompatActivity{
         m1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(Home.this, Seat.class);
+                Intent i=new Intent(Home.this, Date_Time.class);
                 SharedPreferences.Editor editor = t.edit();
                 editor.putString("movie","Stree 2");
                 editor.commit();
@@ -76,7 +64,7 @@ public class Home extends AppCompatActivity{
         m2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(Home.this, Seat.class);
+                Intent i=new Intent(Home.this, Date_Time.class);
                 SharedPreferences.Editor editor = t.edit();
                 editor.putString("movie","G.O.A.T");
                 editor.commit();
@@ -87,7 +75,7 @@ public class Home extends AppCompatActivity{
         m3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(Home.this, Seat.class);
+                Intent i=new Intent(Home.this, Date_Time.class);
                 SharedPreferences.Editor editor = t.edit();
                 editor.putString("movie","Devara Part-1");
                 editor.commit();
@@ -104,7 +92,7 @@ public class Home extends AppCompatActivity{
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 FirebaseAuth.getInstance().signOut();
-                Intent L=new Intent(Home.this,MainActivity.class);
+                Intent L=new Intent(Home.this, MainActivity.class);
                 startActivity(L);
             }
         });

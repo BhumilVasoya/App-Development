@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="A1"
         android:textSize="16sp"
+        android:textColor="@color/black"
         android:background="@drawable/seat_background"
         android:padding="8dp"/>
 </LinearLayout>

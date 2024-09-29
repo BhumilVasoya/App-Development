@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ticket extends AppCompatActivity {
 
-    TextView seat,movie;
+    TextView seat,movie,date,time;
     SharedPreferences t;
     ImageView home1;
 
@@ -24,10 +24,14 @@ public class ticket extends AppCompatActivity {
         seat=(TextView) findViewById(R.id.seatview);
         movie=(TextView) findViewById(R.id.movietitle);
         home1=(ImageView) findViewById(R.id.imageView3);
+        date=(TextView) findViewById(R.id.dateview);
+        time=(TextView) findViewById(R.id.timeview);
 
         t = getSharedPreferences("movie_details", MODE_PRIVATE);
         seat.setText(t.getString("seat",null));
         movie.setText(t.getString("movie",null));
+        date.setText(t.getString("date",null));
+        time.setText(t.getString("time",null));
 
         home1.setOnClickListener(new View.OnClickListener() {
             @Override
